@@ -1,0 +1,14 @@
+version: '3'
+services:
+  myapp:
+    image: d1031/web:v3
+  myproxy:
+    container_name: myproxy
+    image: myproxy
+    ports:
+      - 8080:80
+    volumes:
+      - Nginx_conf:/etc/nginx/conf.d/
+volumes:
+  Nginx_conf:        
+
